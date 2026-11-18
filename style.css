@@ -1,0 +1,523 @@
+/* Import font yang bersih dan estetik */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+:root {
+    /* Palet warna kalem (Warm Cream & Sage/Terracotta lembut) */
+    --bg-color: #f4f1ea;
+    --card-bg: #faf8f5;
+    --text-primary: #2d332f;
+    --text-secondary: #5c665f;
+    --accent-sage: #7c9082;
+    --accent-warm: #d4a373;
+    --cake-base: #e6ccb2;
+    --cake-cream: #ede0d4;
+    --cake-icing: #d4a373;
+    --skeleton-base: #e2dfd7;
+    --skeleton-highlight: #f0ede6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.7;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.network-banner {
+    background-color: #d4a373;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.card-container {
+    background-color: var(--card-bg);
+    max-width: 650px;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(45, 51, 47, 0.06);
+    text-align: center;
+    border: 1px solid rgba(124, 144, 130, 0.2);
+}
+
+/* Tipografi */
+.subtitle {
+    color: var(--accent-sage);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    letter-spacing: 3px;
+    margin-bottom: 0.2rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.badge-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.badge-group h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: rgba(124, 144, 130, 0.15);
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: 50px;
+}
+
+.highlight-text {
+    font-weight: 600;
+    color: var(--accent-sage);
+}
+
+/* Gambar */
+.img-wrapper {
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 350px;
+    min-height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--skeleton-base);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* Kotak Pesan */
+.message-box {
+    text-align: left;
+    background-color: rgba(244, 241, 234, 0.6);
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.jp-text {
+    color: var(--text-secondary);
+    border-left: 3px solid var(--accent-sage);
+    padding-left: 12px;
+}
+
+.connector {
+    text-align: center;
+    font-weight: 600;
+    color: var(--accent-sage);
+}
+
+.wish {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+/* =========================================
+   ANIMASI KUE ULANG TAHUN (PURE CSS)
+   ========================================= */
+.cake-wrapper {
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.cake {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    animation: floatCake 3s ease-in-out infinite;
+}
+
+@keyframes floatCake {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+.plate {
+    width: 140px;
+    height: 8px;
+    background: #dcd7cd;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+}
+
+.layer {
+    position: absolute;
+    width: 120px;
+    border-radius: 8px 8px 2px 2px;
+}
+
+.layer-bottom {
+    height: 28px;
+    bottom: 8px;
+    background: var(--cake-base);
+}
+
+.layer-middle {
+    height: 24px;
+    bottom: 36px;
+    width: 104px;
+    left: 8px;
+    background: var(--cake-cream);
+}
+
+.layer-top {
+    height: 22px;
+    bottom: 60px;
+    width: 88px;
+    left: 16px;
+    background: var(--cake-base);
+}
+
+.icing {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 88px;
+    height: 10px;
+    background: var(--cake-icing);
+    border-radius: 8px 8px 4px 4px;
+}
+
+.drip {
+    position: absolute;
+    top: 22px;
+    width: 10px;
+    height: 12px;
+    background: var(--cake-icing);
+    border-radius: 0 0 10px 10px;
+}
+
+.drip1 { left: 22px; height: 14px; }
+.drip2 { left: 54px; height: 10px; }
+.drip3 { left: 84px; height: 15px; }
+
+.candle {
+    position: absolute;
+    width: 8px;
+    height: 24px;
+    background: var(--accent-sage);
+    top: -8px;
+    left: 56px;
+    border-radius: 3px;
+}
+
+.flame {
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    background: #f4a261;
+    border-radius: 50% 50% 20% 20%;
+    top: -18px;
+    left: -1px;
+    box-shadow: 0 0 10px #f4a261, 0 0 20px #e9c46a;
+    animation: flicker 0.8s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+    100% { transform: scale(1.1) rotate(3deg); opacity: 1; }
+}
+
+/* =========================================
+   SKELETON SHIMMER EFFECT (SAAT NGELAG/LOADING)
+   ========================================= */
+body.is-loading .skeleton-target,
+.img-loading {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--skeleton-base) !important;
+    color: transparent !important;
+    border-color: transparent !important;
+    border-radius: 10px;
+    user-select: none;
+}
+
+body.is-loading .skeleton-target *,
+.img-loading img {
+    opacity: 0 !important;
+}
+
+body.is-loading .skeleton-target::after,
+.img-loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Gaya untuk Bagian Buku Tamu */
+.guestbook-section {
+    margin-top: 2rem;
+    text-align: left;
+    background-color: rgba(244, 241, 234, 0.8);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(124, 144, 130, 0.2);
+}
+
+.guestbook-section h3, .guestbook-section h4 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+#message-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+#message-form input, 
+#message-form textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--skeleton-base);
+    background-color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    outline: none;
+}
+
+#message-form input:focus, 
+#message-form textarea:focus {
+    border-color: var(--accent-sage);
+}
+
+#message-form button {
+    background-color: var(--accent-sage);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#message-form button:hover {
+    background-color: #697d70;
+}
+
+/* Kotak untuk setiap pesan yang masuk */
+.message-card {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    position: relative;
+}
+
+.message-card .sender {
+    font-weight: 700;
+    color: var(--accent-sage);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.message-card .text {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    word-break: break-word;
+}
+
+.message-card .delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #cc5c5c;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+/* Styling Tombol Toggle Tema */
+.theme-btn {
+    background-color: rgba(124, 144, 130, 0.15);
+    border: 1px solid var(--accent-sage);
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+    background-color: var(--accent-sage);
+    color: white;
+}
+
+/* --- PENGATURAN WARNA KETIKA DARK MODE AKTIF --- */
+body.dark-mode {
+    --bg-color: #1a1c1b;
+    --card-bg: #242825;
+    --text-primary: #e6e8e5;
+    --text-secondary: #a3abac;
+    --accent-sage: #94aca0;
+    --accent-warm: #e0b182;
+    --cake-base: #8c7355;
+    --cake-cream: #4a4035;
+    --cake-icing: #c68b59;
+    --skeleton-base: #2e3330;
+    --skeleton-highlight: #3a403d;
+}
+
+/* Penyesuaian elemen khusus saat Dark Mode */
+body.dark-mode .message-box {
+    background-color: rgba(36, 40, 37, 0.8);
+}
+
+body.dark-mode .message-card {
+    background-color: #1e221f;
+    border: 1px solid rgba(148, 172, 160, 0.2);
+}
+
+body.dark-mode .guestbook-section {
+    background-color: rgba(30, 34, 31, 0.8);
+}
+
+body.dark-mode #message-form input, 
+body.dark-mode #message-form textarea {
+    background-color: #1e221f;
+    color: var(--text-primary);
+    border-color: #3a403d;
+}
+
+body.dark-mode .plate {
+    background: #3a403d;
+}
+/* Styling Countdown Timer */
+.countdown-container {
+    margin: 1.5rem 0;
+    background-color: rgba(124, 144, 130, 0.1);
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(124, 144, 130, 0.2);
+    text-align: center;
+}
+
+.countdown-container h3 {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.countdown-timers {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.time-box {
+    background-color: var(--card-bg);
+    padding: 8px 12px;
+    border-radius: 10px;
+    min-width: 55px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    border: 1px solid var(--skeleton-base);
+}
+
+.time-box span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-sage);
+    display: block;
+}
+
+.time-box p {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* Penyesuaian saat Dark Mode Aktif */
+body.dark-mode .countdown-container {
+    background-color: rgba(148, 172, 160, 0.08);
+}
+
+body.dark-mode .time-box {
+    background-color: #1e221f;
+    border-color: #3a403d;
+}
